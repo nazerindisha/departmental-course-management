@@ -1,0 +1,1 @@
+{\n  \"$schema\": \"https://railway.app/railway.schema.json\",\n  \"build\": {\n    \"builder\": \"dockerfile\"\n  },\n  \"deploy\": {\n    \"startCommand\": \"python manage.py migrate && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 4\",\n    \"restartPolicyType\": \"on_failure\",\n    \"restartPolicyMaxRetries\": 5\n  }\n}\n
